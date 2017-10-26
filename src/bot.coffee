@@ -181,7 +181,7 @@ class SlackBot extends Adapter
     # Send to Hubot based on message type
     switch subtype
 
-      when 'message', 'bot_message'
+      when 'message', 'bot_message', 'me_message'
         @robot.logger.debug "Received message: '#{text}' in channel: #{channel.name}, from: #{user.name}"
         if returnRawText
           textMessage = new SlackTextMessage(user, text, rawText, message)
